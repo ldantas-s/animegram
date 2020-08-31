@@ -135,4 +135,7 @@ body{
     grid-template-columns: 1fr 1fr;
     grid-gap: 5px;
   }
+  .backdrop img {
+    max-width: 90%;
+  }
 }
