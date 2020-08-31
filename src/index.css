@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+
+:root{
+  --primary: #ffa45c;
+  --secondary: #ffcdab;
+  --color-dark: #5d5d5a;
+  --color-light: #fff4e3;
+  --error: #ee5a5a;
+  --success: #22eaaa;
+}
+
+/* base styles & title */
+body{
+  font-family: "Noto Serif";
+  color: var(--color-dark);
+}
+
+.success { 
+  color: var(--success);
+  padding: 5px;
+}
+.error { 
+  color: var(--error);
+  padding: 5px;
+}
+.empty { text-align: center; }
+
+
+.App{
+  max-width: 960px;
+  margin: 0 auto;
+}
+.title h1{
+  color: var(--primary);
+  padding-top: 10px;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  font-weight: normal;
+}
+.title h2, .title p{
+  text-align: center;
+}
+.title h2{
+  margin-top: 60px;
+  font-size: 2.6rem;
+}
+
+/* upload form styles */
+.input-file {
+  display: none;
+}
+.label-file {
+  width: 50px;
+  height: 50px;
+  margin: 10px auto;
+  border-radius: 50px;
+  border: 2px dashed var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--primary);
+  font-size: 20px;
+  font-weight: bold;
+  transition: all 100ms linear;
+}
+.label-file:hover {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+  color: white;
+  animation: pulse 200ms linear 2;
+  transition: all 100ms linear;
+}
+.output {
+  text-align: center;
+  height: 40px;
+}
+@keyframes pulse {
+  to {
+    transform: scale(1.1);
+  }
+}
+/* progress bar styles */
+.progress-bar {
+  height: 4px;
+  background-color: var(--primary);
+  border-radius: 10px;
+  transition: width 100ms linear;
+}
+/* image grid styles */
+.img-grid {
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px;
+}
+.img-wrap {
+  overflow: hidden;
+  height: 0;
+  padding: 50% 0;
+  border-radius: 5px;
+  position: relative;
+  opacity: 0.8;
+  cursor: pointer;
+}
+.img-wrap img {
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 150%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* modal styles */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.5);
+}
+.backdrop img {
+  display: block;
+  max-width: 60%;
+  max-height: 80%;
+  margin: 60px auto;
+  box-shadow: 3px 5px 7px rgba(0,0,0,.5);
+  border: 3px solid white;
+}
+
+@media(max-width: 768px) {
+  .title h1 { text-align: center; }
+  .img-grid { 
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+  }
+}
